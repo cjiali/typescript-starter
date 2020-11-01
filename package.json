@@ -8,10 +8,11 @@
   "scripts": {
     "lint": "eslint",
     "build": "rollup -c",
+    "test": "jest -u",
     "api": "api-extractor run"
   },
   "hooks": {
-    "pre-commit": "lint-staged",
+    "pre-commit": "lint-staged && jest -u",
     "commit-msg": "node scripts/verify-commit-msg.js ${HUSKY_GIT_PARAMS}"
   },
   "lint-staged": {
@@ -24,10 +25,12 @@
     "@babel/core": "^7.12.3",
     "@babel/preset-env": "^7.12.1",
     "@microsoft/api-extractor": "^7.11.2",
+    "@types/jest": "^26.0.15",
     "@typescript-eslint/eslint-plugin": "^4.6.0",
     "@typescript-eslint/parser": "^4.6.0",
     "eslint": "^7.12.1",
     "husky": "^4.3.0",
+    "jest": "^26.6.1",
     "lint-staged": "^10.5.1",
     "prettier": "^2.1.2",
     "rollup": "^2.32.1",
@@ -37,7 +40,14 @@
     "rollup-plugin-json": "^4.0.0",
     "rollup-plugin-node-resolve": "^5.2.0",
     "rollup-plugin-typescript2": "^0.29.0",
+    "ts-jest": "^26.4.3",
     "typescript": "^4.0.5"
+  },
+  "jest":{
+      "verbose": true, 
+      "coverage": true, 
+      "preset": "ts-jest",
+      "testEnvironment": "node"
   },
   "babel": {
     "presets": [
