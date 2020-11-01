@@ -1,0 +1,8 @@
+{
+  "name": "typescript-starter",
+  "version": "0.0.1",
+  "description": "A starter template for typescript project.",
+  "main": "index.js",
+  "author": "cjiali <chjiali@outlook.com>",
+  "license": "MIT"
+}
